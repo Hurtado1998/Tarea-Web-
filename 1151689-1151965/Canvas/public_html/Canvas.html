@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>CANVAS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>CANVAS</h1>
+        <p>Dibujamos un castillo utilizando un canvas</p>
+        <canvas id="myCanvas" width="130" height="100" style="border:1px solid #000000;">
+        </canvas>
+
+
+
+        <script>
+            var c = document.getElementById("myCanvas");
+            var cxt = c.getContext("2d");
+
+            //Dibujando un castillo
+            cxt.beginPath();
+            cxt.moveTo(30, 30);
+            cxt.lineTo(40, 30);
+            cxt.lineTo(40, 40);
+            cxt.lineTo(50, 40);
+            cxt.lineTo(50, 30);
+            cxt.lineTo(60, 30);
+            cxt.lineTo(60, 40);
+            cxt.lineTo(70, 40);
+            cxt.lineTo(70, 30);
+            cxt.lineTo(80, 30);
+            cxt.lineTo(80, 40);
+            cxt.lineTo(90, 40);
+            cxt.lineTo(90, 30);
+            cxt.lineTo(100, 30);
+            cxt.lineTo(100, 90);
+            cxt.lineTo(30, 90);
+            cxt.closePath();  //Cierra la figura, en lugar de usar otro lineTo()
+            cxt.stroke();
+
+            //Hacemos el asta de una bandera
+            cxt.strokeStyle = "brown";
+            cxt.beginPath();
+            cxt.moveTo(55, 30);
+            cxt.lineTo(55, 10);
+            cxt.stroke();
+
+            //Hacemos la bandera
+            cxt.fillStyle = "green";
+            cxt.beginPath();
+            cxt.moveTo(55, 10);
+            cxt.lineTo(65, 15);
+            cxt.lineTo(55, 20);
+            cxt.fill();  //Cierra la figura y la rellena
+
+            //Hacemos la puerta;
+            cxt.fillStyle = "brown";
+            cxt.beginPath();
+            cxt.moveTo(55, 90);
+            cxt.lineTo(55, 75);
+            cxt.lineTo(65, 70);
+            cxt.lineTo(75, 75);
+            cxt.lineTo(75, 90);
+            cxt.fill();
+        </script>
+
+        <p>Pondremos un enlace en un canvas</p>
+        <a href="https://classroom.google.com/">
+            <canvas id="Canvas_2" width="370" height="80" style="border:1px solid #000000;">
+            </canvas>
+        </a>
+
+        <script>
+            var d = document.getElementById("Canvas_2");
+            var zxc = d.getContext("2d");
+            zxc.font = "40px Arial";
+            zxc.strokeText("Hola, soy un enlace", 10, 50);
+        </script>
+    </body>
+</html>
